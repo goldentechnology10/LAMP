@@ -9,13 +9,20 @@
         - postgresql-contrib
         - python3-psycopg2
 
+    - name: Enable service to start on boot up
+      service:
+       name: postgresql
+       state: started
+
+
+
     - name: "Find out if PostgreSQL is initialized"
       ansible.builtin.stat:
         path: "/var/lib/pgsql/data/pg_hba.conf"
       register: postgres_data
 
     - name: "Initialize PostgreSQL"
-      shell: "postgresql-setup initdb"
+      shell: "sudo su - postgres;postgresql-setup initdb"
       when: not postgres_data.stat.exists
 
     

@@ -36,5 +36,5 @@
   service:
     name: httpd
     state: started
-  notify: restart httpd
+  notify: reload_httpd
    

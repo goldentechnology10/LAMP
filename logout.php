@@ -1,7 +1,7 @@
 <?php
-$user = "caux";
-$password = "caux";
-$database = "caux";
+$user = "omega";
+$password = "omega";
+$database = "omega";
 $table = "employee";
 $conn= new PDO("pgsql:host=192.168.40.132;dbname=$database", $user, $password);
 $_SESSION = [];
